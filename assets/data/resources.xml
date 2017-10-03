@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pack>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="0" continuous="true" desc="" eventsnippetid="6" fixedrot="true" fric="0.2" gid="4" id="6" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Coin" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="7" static="true">
+        <snippets>
+            <s enabled="true" id="8">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="2" list="0" val="6"/>
+                <prop id="3" list="0" val="100"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="32" id="7" name="Coin" shared="false" width="32">
+        <anim across="3" down="3" durations="100,100,100,100,100,100,100,100" height="96" id="0" loop="true" name="Rotating" numframes="8" originx="0" originy="16" sync="false" version="2" width="96">
+            <poly data="4,0,0,32,0,32,34,0,34" density="0.1" fric="0.2" gid="-1000" id="0" name="Rotating" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <custom-block blocktag="custom-12" blocktype="ACTION" code="sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_DecrementScore&quot;, []);" desc="" global="false" gui="Decrement Score By %0" id="12" message="DecrementScore" name="DecrementScore" oid="-1" return="void" shared="false" snippetID="9">
+        <blank name="Amount" order="0" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-14" blocktype="NORMAL" code="cast(sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_GetFont&quot;), Font)" desc="Get the font used. Use for if you are setting up labels to retain consistency across Flash and other platforms." global="false" gui="Get Font" id="14" message="GetFont" name="GetFont" oid="-1" return="font" shared="false" snippetID="9"/>
+    <custom-block blocktag="custom-16" blocktype="NORMAL" code="cast(sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_GetScore&quot;), Float)" desc="" global="false" gui="Get Current Score" id="16" message="GetScore" name="GetScore" oid="-1" return="number" shared="false" snippetID="9"/>
+    <custom-block blocktag="custom-11" blocktype="NORMAL" code="cast(sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_GetXOffset&quot;), Float)" desc="" global="false" gui="Get Score Drawing X Offset" id="11" message="GetXOffset" name="GetXOffset" oid="-1" return="number" shared="false" snippetID="9"/>
+    <custom-block blocktag="custom-10" blocktype="NORMAL" code="cast(sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_GetYOffset&quot;), Float)" desc="" global="false" gui="Get Score Drawing Y Offset" id="10" message="GetYOffset" name="GetYOffset" oid="-1" return="number" shared="false" snippetID="9"/>
+    <tileset across="3" atlasID="0" desc="" down="3" id="0" name="Ground" oid="-1" shared="false" th="32" tw="32">
+        <tile collision="1" data="" durations="100" frames="0" id="0" order="-1"/>
+        <tile collision="1" data="" durations="100" frames="1" id="1" order="-1"/>
+        <tile collision="1" data="" durations="100" frames="2" id="2" order="-1"/>
+        <tile collision="1" data="" durations="100" frames="3" id="3" order="-1"/>
+        <tile collision="1" data="" durations="100" frames="4" id="4" order="-1"/>
+        <tile collision="1" data="" durations="100" frames="5" id="5" order="-1"/>
+        <tile collision="1" data="" durations="100" frames="6" id="6" order="-1"/>
+        <tile collision="14" data="" durations="100" frames="7" id="7" order="-1"/>
+        <tile collision="13" data="" durations="100" frames="8" id="8" order="-1"/>
+    </tileset>
+    <custom-block blocktag="custom-13" blocktype="ACTION" code="sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_IncrementScore&quot;, []);" desc="" global="false" gui="Increment Score By %0" id="13" message="IncrementScore" name="IncrementScore" oid="-1" return="void" shared="false" snippetID="9">
+        <blank name="Amount" order="0" type="number"/>
+    </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="1" fixedrot="true" fric="0.2" gid="3" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Panda" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
+        <snippets>
+            <s enabled="true" id="2">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="20"/>
+                <prop id="2" list="0" val="false"/>
+                <prop id="3" list="0" val="Stand left"/>
+                <prop id="4" list="0" val="Stand right"/>
+                <prop id="5" list="0" val="Walk left"/>
+                <prop id="6" list="0" val="Walk right"/>
+            </s>
+            <s enabled="true" id="3">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="40"/>
+                <prop id="2" list="0" val="false"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="32" id="4" name="Panda" shared="false" width="32">
+        <anim across="2" down="2" durations="100,100,100" height="64" id="0" loop="true" name="Walk left" numframes="3" originx="16" originy="16" sync="false" version="2" width="64">
+            <poly data="4,0,0,32,0,32,32,0,32" density="0.1" fric="0.2" gid="-1000" id="0" name="Walk left" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="1" down="1" durations="100" height="32" id="1" loop="true" name="Stand left" numframes="1" originx="16" originy="16" sync="false" version="2" width="32">
+            <poly data="4,0,0,32,0,32,32,0,32" density="0.1" fric="0.2" gid="-1000" id="0" name="Stand left" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="2" down="2" durations="100,100,100" height="64" id="2" loop="true" name="Walk right" numframes="3" originx="16" originy="16" sync="false" version="2" width="64">
+            <poly data="4,0,0,32,0,32,32,0,32" density="0.1" fric="0.2" gid="-1000" id="0" name="Walk right" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="1" down="1" durations="100" height="32" id="3" loop="true" name="Stand right" numframes="1" originx="16" originy="16" sync="false" version="2" width="32">
+            <poly data="4,0,0,32,0,32,32,0,32" density="0.1" fric="0.2" gid="-1000" id="0" name="Stand right" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <custom-block blocktag="custom-8" blocktype="ACTION" code="sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_SetDrawOffset&quot;, [, ]);" desc="" global="false" gui="Set Score Drawing Offset to X %0 Y %1" id="8" message="SetDrawOffset" name="SetDrawOffset" oid="-1" return="void" shared="false" snippetID="9">
+        <blank name="Horizontal" order="0" type="number"/>
+        <blank name="Vertical" order="1" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-9" blocktype="ACTION" code="sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_SetScore&quot;, []);" desc="" global="false" gui="Set Current Score To %0" id="9" message="SetScore" name="SetScore" oid="-1" return="void" shared="false" snippetID="9">
+        <blank name="Score" order="0" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-15" blocktype="ACTION" code="sayToScene(&quot;Score Manager&quot;, &quot;_customBlock_SetScoreFont&quot;, []);" desc="" global="false" gui="Set Score Font To %0" id="15" message="SetScoreFont" name="SetScoreFont" oid="-1" return="void" shared="false" snippetID="9">
+        <blank name="Font" order="0" type="font"/>
+    </custom-block>
+    <tileset across="1" atlasID="0" desc="" down="1" id="5" name="tert" oid="-1" shared="false" th="32" tw="32">
+        <tile collision="-1" data="" durations="100" frames="0" id="0" order="-1"/>
+    </tileset>
+</pack>
